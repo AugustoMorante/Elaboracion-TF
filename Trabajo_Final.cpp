@@ -1,5 +1,5 @@
 
-#include "stdafx.h"
+#include "pch.h"
 #include <iostream>
 #include <conio.h>
 #include <stdlib.h>
@@ -13,7 +13,7 @@ int main()
 	{
 		for (int j = 0; j < 27; j++)
 		{
-			if (i == 10 && j <= 5)
+			if (i == 8 && j <= 5 || i == 3 && j >= 10 && j <= 13)
 			{
 				cout << "-";
 			}
@@ -21,15 +21,11 @@ int main()
 			{
 				cout << " ";
 			}
-			if (i == 13 && j > 5)
+			if (i == 9 && j > 5)
 			{
 				cout << "~";
 			}
-			else
-			{
-				cout << " ";
-			}
-			if (j == 5 && i >= 10)
+			if (j == 5 && i >= 8 || j == 12 && i > 3 && i <= 6 || i == 7 && j == 2 || i == 7 && j == 0 || i == 6 && j == 1 || i == 5 && j == 1)
 			{
 				cout << "|";
 			}
@@ -37,10 +33,17 @@ int main()
 			{
 				cout << " ";
 			}
+			if (i == 4 && j == 7 || i == 5 && j == 6 || i == 6 && j == 5 || i == 7 && j == 4)
+			{
+				cout << "/";
+			}
+			if (i == 4 && j == 1)
+			{
+				cout << "O";
+			}
 		}
 		cout << endl;
 	}
 	_getch();
-    return 0;
+	return 0;
 }
-
