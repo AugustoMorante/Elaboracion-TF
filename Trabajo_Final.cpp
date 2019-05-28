@@ -1,5 +1,6 @@
 
 #include "pch.h"
+#include "stdafx.h"
 #include <iostream>
 #include <conio.h>
 #include <stdlib.h>
@@ -38,6 +39,18 @@ int main()
 				cout << "/";
 			}
 			if (i == 4 && j == 1)
+			{
+				cout << "O";
+			}
+			if (i == 15 && j == 13) 
+			{
+				cout << "<";
+			}
+			if (i == 15 && j == 15 || i == 15 && j == 12)
+			{
+				cout << ">";
+			}
+			if (i == 15 && j == 14)
 			{
 				cout << "O";
 			}
