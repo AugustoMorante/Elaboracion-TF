@@ -46,7 +46,7 @@ void ParteFija()
 	}
 
 	//AguaLimite
-	for (int i = 30; i < 100; i = i + 2)
+	for (int i = 30; i < 80; i = i + 2)
 	{
 		ObtenerXY(i, 7);
 		cout << " ~";
@@ -105,7 +105,7 @@ void ParteFija()
 	//MuelleSoporte
 	for (int i = 8; i < 25; i++)
 	{
-		ObtenerXY(29, i);
+		ObtenerXY(25, i);
 		cout << "|";
 	}
 	return;
