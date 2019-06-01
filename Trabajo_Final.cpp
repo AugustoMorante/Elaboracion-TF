@@ -1,11 +1,12 @@
 
-#include <iostream>
-#include <conio.h>
+#include<iostream>
+#include<conio.h>
 #include <stdio.h>
 #include <windows.h>
 constexpr auto ARRIBA = 72;
 constexpr auto ABAJO = 80;
 using namespace std;
+using namespace System;
 
 void ObtenerXY(int x, int y)
 {
@@ -111,15 +112,42 @@ void ParteFija()
 	return;
 }
 
-int main()
-{
+int algo[3][3] = { { 1,0,1 },{ 0,1,0 },{ 1,0,1 } };
+void pintar(int x, int y) {
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			if (algo[i][j]) {
+				Console::SetCursorPosition(x + j, y + i);
+				cout << "<";
+			}
+		}
+	}
+}
+void borrar(int x, int y) {
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			if (algo[i][j]) {
+				Console::SetCursorPosition(x + j, y + i);
+				cout << " ";
+			}
+		}
+	}
+}
+void main() {
+
 	OcultarCursor();
 	ParteFija();
 	int x = 50, y = 4;
 	ObtenerXY(x, y); cout << "|";
+	int x1 = 30, y1 = 16, dx1 = 1;
+	int x2 = 45, y2 = 8, dx2 = 1;
 	while (true)
 	{
-		
+
 		if (_kbhit())
 		{
 			char tecla = _getch();
@@ -152,6 +180,17 @@ int main()
 			}
 			ObtenerXY(x, y); cout << "|";
 		}
+
+		borrar(x1, y1);
+		if (x1 + dx1 < 26 || x1 + dx1 + 3 == 80)dx1 = -dx1;
+		x1 += dx1;
+		pintar(x1, y1);
+		borrar(x2, y2);
+		if (x2 + dx2 < 26 || x2 + dx2 + 3 == 80)dx2 = -dx2;
+		x2 += dx2;
+		pintar(x2, y2);
+
+		_sleep(100);
 	}
-	_getch();
+
 }
